@@ -21,17 +21,14 @@ class TicTacToe {
     }
     
     isDraw() {
-        if (this.noMoreTurns() == true && this.getWinner() != null) {return false;}
-        if (this.noMoreTurns() == true) {return true;} 
-        if (this.getWinner() == null) {return true;}
-        else {return false;}
+        if (this.getWinner() == null && this.noMoreTurns() == true) return true;
+        return false;
     }
 
 
     isFinished() {
-        if (this.getWinner() != null) {return true;}
-        if (this.isDraw() == true) {return true;}
-        else {return false;}
+        if (this.isDraw() == true || this.getWinner() != null) return true;
+        return false;
     }
 
     getWinner() {
